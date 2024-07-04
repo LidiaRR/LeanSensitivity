@@ -269,7 +269,7 @@ lemma card_par {par : Bool} {n : ℕ} {h : n > 0}: (Finset.filter (λ v => par_f
 lemma card_sets {n : ℕ} {hn : n > 0} {P : partition n} (par : Bool) : (parity_set P par).card =
   ∑ x in (Finset.powerset P.parts \ {∅}), (-1 : ℤ)^(x.card + 1) *
   if (x.sup id).card = n then (ε' n par) else 2 ^ (n - (x.sup id).card - 1) := by
-  rw [parity_set_eq, inclusion_exclusion']
+  rw [parity_set_eq, inclusion_exclusion]
 
   apply Finset.sum_congr rfl
   intro s hs

@@ -268,10 +268,10 @@ lemma existance {n_not_zero : n > 0} : ∃ P : partition n, neatPartition P := b
 
   · simp at card_parts
     rw [card_parts]
-    by_cases h : (n : ℝ)/((Nat.sqrt n) : ℝ) > (((Nat.sqrt n) + 1) : ℝ) <;> simp [h] --<;> rw [abs_sub_lt_iff]
+    by_cases h : (n : ℝ)/((Nat.sqrt n) : ℝ) > (((Nat.sqrt n) + 1) : ℝ) <;> simp [h]
 
   · intro p hp
     simp at hp
     obtain ⟨i, hp⟩ := hp
     rw [hp.symm]
-    cases' (this i) with h h <;> simp at h <;> simp [h.1] --rw [h.1, abs_sub_lt_iff]
+    cases' (this i) with h h <;> simp at h <;> simp [h.1]

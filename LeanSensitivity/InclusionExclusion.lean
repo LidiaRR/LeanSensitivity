@@ -65,7 +65,7 @@ lemma aux_inf {α β : Type} [Fintype β] [DecidableEq α] [DecidableEq β] {a :
             exact λ i hi => ⟨h' i (Or.inl hi), h' x (Or.inr rfl)⟩
 
 
-lemma inclusion_exclusion' {α β : Type} (f : α → Finset β) (s : Finset α) [Fintype β] [DecidableEq α] [DecidableEq β]:
+lemma inclusion_exclusion {α β : Type} (f : α → Finset β) (s : Finset α) [Fintype β] [DecidableEq α] [DecidableEq β]:
   (s.sup f).card = ∑ x in (Finset.powerset s \ {∅}), (-1 : ℤ)^(x.card + 1) * (Finset.inf x f).card := by
   set n := s.card with ncard
   clear_value n
